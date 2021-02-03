@@ -80,7 +80,7 @@ export default function PartyLoot() {
               <div className='fon'>
                 <h3>
                   Cada player teve profit
-                  {Data.profit > 0 ? " de: " : " de: "}
+                  {Data.profit > 0 ? " de : " : " de : "}
                   <span style={{ color: Data.profit > 0 ? "green" : "red" }}>
                     {Math.floor(Data.profit).toLocaleString()} GP
                   </span>
