@@ -75,64 +75,79 @@ export default function PartyLoot() {
         </div>
       ) : (
         Data && (
-          <div id='results'>
-            <div className='fon'>
-              <h4>
-                Cada Player Teve Profit
-                {Data.profit > 0 ? " De " : " De "}
-                <span style={{ color: Data.profit > 0 ? "green" : "red" }}>
-                  {Math.floor(Data.profit).toLocaleString()} GP
-                </span>
-              </h4>
-              <p className='resultsLoot'>
-                Total Loot: {Math.floor(Data.loot).toLocaleString()} GP
-              </p>
-              <p className='resultsLoot'>
-                Total Suplies: {Math.floor(Data.supplies).toLocaleString()} GP
-              </p>
-            </div>
+          <div>
+            <div id='results'>
+              <div className='fon'>
+                <h3>
+                  Cada player teve profit
+                  {Data.profit > 0 ? " de: " : " de: "}
+                  <span style={{ color: Data.profit > 0 ? "green" : "red" }}>
+                    {Math.floor(Data.profit).toLocaleString()} GP
+                  </span>
+                </h3>
+                <p className='resultsLoot'>
+                  Total Loot: {Math.floor(Data.loot).toLocaleString()} GP
+                </p>
+                <p className='resultsLoot'>
+                  Total Suplies: {Math.floor(Data.supplies).toLocaleString()} GP
+                </p>
+              </div>
 
-            <div className='resultsBody'>
-              {Data.players.map((player, idx) => (
-                <PlayerElement key={idx} {...player}>
-                  <div id='pagewrap'>
-                    <div className='gallery'>
-                      <article className='image'>
-                        {player.name}
-                        <h1 className='resultsBalance'>
-                          Balance:
-                          <span>
-                            {Math.floor(player.balance).toLocaleString()} GP
-                          </span>
-                        </h1>
+              <div className='resultsBody'>
+                {Data.players.map((player, idx) => (
+                  <PlayerElement key={idx} {...player}>
+                    <div id='pagewrap'>
+                      <div className='gallery'>
+                        <article className='image'>
+                          <h1> {player.name}</h1>
 
-                        <h1 className='resultsProfit'>
-                          Profit:
-                          <span>
-                            {Math.floor(Data.profit).toLocaleString()} GP
-                          </span>
-                        </h1>
-                        <br></br>
-                        <h1 className='resultsPayout'>
-                          Payment:
-                          <span>
-                            {Math.floor(player.payOut).toLocaleString()} GP
-                          </span>
-                        </h1>
-                      </article>
+                          <h3 className='resultsBalance'>
+                            Balance:
+                            <span>
+                              {Math.floor(player.balance).toLocaleString()} GP
+                            </span>
+                          </h3>
+
+                          <h3 className='resultsProfit'>
+                            Profit:
+                            <span>
+                              {Math.floor(Data.profit).toLocaleString()} GP
+                            </span>
+                          </h3>
+                          <h3 className='resultsPayout'>
+                            Supplies:
+                            <span>
+                              {Math.floor(player.supplies).toLocaleString()} GP
+                            </span>
+                          </h3>
+                          <h3 className='resultsPayout'>
+                            Dano:
+                            <span>
+                              {Math.floor(player.damage).toLocaleString()}
+                            </span>
+                          </h3>
+                          <br></br>
+                          <h2 className='resultsPayout'>
+                            Pagamento:
+                            <span>
+                              {Math.floor(player.payOut).toLocaleString()} GP
+                            </span>
+                          </h2>
+                        </article>
+                      </div>
                     </div>
-                  </div>
-                </PlayerElement>
-              ))}
+                  </PlayerElement>
+                ))}
+              </div>
+              <button
+                className='botao'
+                disabled={activeStep === 0}
+                variant='danger'
+                onClick={handleReset}
+              >
+                Reset
+              </button>
             </div>
-            <button
-              className='botao'
-              disabled={activeStep === 0}
-              variant='danger'
-              onClick={handleReset}
-            >
-              Reset
-            </button>
           </div>
         )
       )}
@@ -147,7 +162,7 @@ const PartyLootStyled = styled.div`
     resize: none;
     width: 90vw;
     height: 80vh;
-    max-width: 4000px;
+    max-width: 500px;
     max-height: 550px;
   }
   .resultsHeader {
@@ -155,7 +170,7 @@ const PartyLootStyled = styled.div`
   }
   .resultsBody {
     display: flex;
-    flex-wrap: wrap;
+
     justify-content: space-evenly;
   }
   #results {
@@ -168,12 +183,14 @@ const PartyLootStyled = styled.div`
 `;
 
 const PlayerElement = styled.div`
-  width: 15rem;
+  width: 21rem;
   margin: 1em 5px;
   font-size: 1rem;
+
   p {
     margin: 0;
   }
+
   .resultsPayout {
     span {
       color: ${({ payOut }) => (payOut > 0 ? "green" : "red")};

@@ -6,7 +6,8 @@ body {
   display: grid;
   align-items: center;
   justify-items: center;
-  background-image: url("https://tibiaking.com/uploads/monthly_2020_04/artwork-fantasy-art-wizard-books-skull-hd-wallpaper-8da088500cf90d0223ad270c3afc0ba4.jpg.c561c7009e8cbef3198e72a894d9cd58.jpg");
+  background-image: url("../../Assets/home.jpg");
+  position: relative;
 }
 .card {
   background-color: rgba(255, 255, 255, 0.5);
@@ -32,8 +33,8 @@ body {
 }
 
 .portada {
-  max-width: 500px;
-  background-image: url("https://www.tibiawiki.com.br/images/7/76/Tibia_icon.png");
+  max-width: 400px;
+  background-image: url("../../Assets/Tibia_icon.png");
   background-size: cover;
 }
 .desc {
