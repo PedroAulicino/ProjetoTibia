@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-image: url("https://tibiaking.com/uploads/monthly_2020_04/artwork-fantasy-art-wizard-books-skull-hd-wallpaper-8da088500cf90d0223ad270c3afc0ba4.jpg.c561c7009e8cbef3198e72a894d9cd58.jpg");
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.7);
+  height: 400px;
+  display: flex;
+  border-radius: 9px;
+  position: relative;
+}
+
+.card .title {
+  font-size: 48px;
+}
+
+.card-text {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.title-total {
+  padding: 3.5em 1.5em 1.5em 1.5em;
+}
+
+.portada {
+  max-width: 500px;
+  background-image: url("https://www.tibiawiki.com.br/images/7/76/Tibia_icon.png");
+  background-size: cover;
+}
+.desc {
+  margin-top: 75px;
+}
+
+form {
+  width: 850px;
+  padding: 15px;
+  display: flex;
+  margin-top: 40px;
+  border: 2px solid #a9a9a9;
+  max-height: 40px;
+}
+
+.field-wrap {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+label {
+  width: 68px;
+}
+
+.cardd {
+  background-color: rgba(213, 221, 241, 0.7);
+  margin: auto;
+  height: 300px;
+  max-width: 70%;
+  display: flex;
+}
+
+.card .title {
+  padding: 1rem;
+  text-align: left;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.cardd {
+  width: 750px;
+  margin: auto;
+  box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.7);
+}
+.list {
+  margin: auto;
+}
+.fonn {
+  color: rgb(253, 4, 4);
+  margin-top: 30px;
+}
