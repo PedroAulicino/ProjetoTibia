@@ -3,7 +3,6 @@ export function parseLootYML(string) {
   const partySize = Math.floor((stringifyPaste.length - 1) / 6);
   let partyHuntObjects = [];
   let playerIdx = 6;
-
   for (let i = 0; i < partySize; i++) {
     const playerObject = {
       name: stringifyPaste[playerIdx],
@@ -24,13 +23,10 @@ export function parseLootYML(string) {
   let totalSupplies = trimSpaces(stringifyPaste[4]);
 
   const profit = (totalLoot - totalSupplies) / partySize;
-
   partyHuntObjects.forEach((el) => {
     el["profit"] = profit;
-
     el["payOut"] = el.supplies + profit;
   });
-
   const rawData = {
     lootType: stringifyPaste[playerIdx - 5],
     loot: totalLoot,
@@ -44,7 +40,6 @@ export function parseLootYML(string) {
 function trimSpaces(string) {
   string = string.split(":");
   let newString = [];
-
   for (let i = 0; i < string[1].length; i++) {
     if (
       (string[1].charCodeAt(i) < 58 && string[1].charCodeAt(i) > 47) ||
